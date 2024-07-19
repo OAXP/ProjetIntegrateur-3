@@ -1,0 +1,184 @@
+
+@use '@angular/material' as mat;
+@include mat.core();
+
+$md-orange-palette: (
+    50 : #fff0e0,
+    100 : #fedab3,
+    200 : #fdc280,
+    300 : #fcaa4d,
+    400 : #fc9726,
+    500 : #fb8500,
+    600 : #fa7d00,
+    700 : #fa7200,
+    800 : #f96800,
+    900 : #f85500,
+    A100 : #ffffff,
+    A200 : #fff1eb,
+    A400 : #ffccb8,
+    A700 : #ffba9f,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$md-yellow-palette: (
+    50 : #fff6e1,
+    100 : #ffe9b3,
+    200 : #ffdb81,
+    300 : #ffcd4f,
+    400 : #ffc229,
+    500 : #ffb703,
+    600 : #ffb003,
+    700 : #ffa702,
+    800 : #ff9f02,
+    900 : #ff9001,
+    A100 : #ffffff,
+    A200 : #fff9f2,
+    A400 : #ffe0bf,
+    A700 : #ffd4a6,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$md-blue-palette: (
+    50 : #e1e6e9,
+    100 : #b3c1c8,
+    200 : #8198a3,
+    300 : #4e6e7e,
+    400 : #284f63,
+    500 : #023047,
+    600 : #022b40,
+    700 : #012437,
+    800 : #011e2f,
+    900 : #011320,
+    A100 : #5daaff,
+    A200 : #2a8fff,
+    A400 : #0074f6,
+    A700 : #0068dc,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$md-blue2-palette: (
+    50 : #e4f3f7,
+    100 : #bce2eb,
+    200 : #90cfde,
+    300 : #64bbd0,
+    400 : #42adc6,
+    500 : #219ebc,
+    600 : #1d96b6,
+    700 : #188cad,
+    800 : #1482a5,
+    900 : #0b7097,
+    A100 : #c5edff,
+    A200 : #92deff,
+    A400 : #5fceff,
+    A700 : #46c6ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$md-blue3-palette: (
+    50 : #f1f9fc,
+    100 : #ddeff8,
+    200 : #c7e5f3,
+    300 : #b0daee,
+    400 : #9fd2ea,
+    500 : #8ecae6,
+    600 : #86c5e3,
+    700 : #7bbddf,
+    800 : #71b7db,
+    900 : #5fabd5,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #daf1ff,
+    A700 : #c0e8ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$robot-commander-primary: mat.define-palette($md-orange-palette);
+$robot-commander-accent: mat.define-palette($md-blue-palette);
+
+$robot-commander-warn: mat.define-palette(mat.$red-palette);
+
+$robot-commander-theme: mat.define-light-theme((
+  color: (
+    primary: $robot-commander-primary,
+    accent: $robot-commander-accent,
+    warn: $robot-commander-warn,
+  )
+));
+
+@include mat.all-component-themes($robot-commander-theme);
+

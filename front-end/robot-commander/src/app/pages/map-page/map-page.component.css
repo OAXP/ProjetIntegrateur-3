@@ -1,0 +1,10 @@
+.background {
+    display: flex;
+    justify-content: center;
+    background-color: #f2f2f2;
+    height: calc(100vh - 64px);
+}
+
+.container {
+    margin: 16px;
+}

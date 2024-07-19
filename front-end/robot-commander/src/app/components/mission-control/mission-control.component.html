@@ -1,0 +1,19 @@
+<div id="container" #container>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Mission Control</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="button-container">
+                <button mat-raised-button class="start-button" (click)="startMission()">
+                    <mat-icon>play_arrow</mat-icon>
+                    Démarrer
+                </button>
+                <button mat-raised-button class="return-button" (click)="stopMission()">
+                    <mat-icon>home</mat-icon>
+                    Retourner
+                </button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

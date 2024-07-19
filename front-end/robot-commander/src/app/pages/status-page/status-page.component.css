@@ -1,0 +1,51 @@
+.title {
+  color: #219ebc;
+  font-size: 1.75rem;
+  font-weight: 300;
+  margin-left: 15px;
+}
+
+.edit-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+mat-button-toggle-group {
+  margin-right: 15px;
+}
+
+.mat-button-toggle {
+  background-color: #2e2e2e;
+  color: white;
+}
+
+.mat-button-toggle-checked {
+  background-color: rgba(46, 46, 46, 0.65);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 64px);
+  background-color: #f2f2f2;
+}
+
+.gridster-container {
+  flex-grow: 1;
+}
+
+gridster {
+  background: none;
+}
+
+gridster-item {
+  background: none;
+  padding-bottom: 2px;
+}

@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f2f2;
+  min-height: calc(100vh - 64px);
+}
+
+.title {
+  color: #219ebc;
+  font-size: 1.75rem;
+  font-weight: 300;
+  margin-left: 15px;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.margin-20 {
+  margin: 0 20px;
+  margin-bottom: 20px;
+}

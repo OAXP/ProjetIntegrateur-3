@@ -1,0 +1,71 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="over" opened="false" class="custom-sidenav">
+    <mat-toolbar color="accent">Menu</mat-toolbar>
+    <div class="sidenav-content">
+      <a mat-button routerLink="/status" routerLinkActive="active" (click)="sidenav.close()">
+        <mat-icon>dashboard</mat-icon>
+        <span>Statut</span>
+      </a>
+      <a mat-button routerLink="/config" routerLinkActive="active" (click)="sidenav.close()">
+        <mat-icon>build</mat-icon>
+        <span>Configuration</span>
+      </a>
+      <a mat-button routerLink="/map" routerLinkActive="active" (click)="sidenav.close()">
+        <mat-icon>map</mat-icon>
+        <span>Carte</span>
+      </a>
+      <a mat-button routerLink="/history" routerLinkActive="active" (click)="sidenav.close()">
+        <mat-icon>history</mat-icon>
+        <span>Historique</span>
+      </a>
+    </div>
+    <footer class="sidenav-footer">
+      Équipe 106 - INF3995
+    </footer>
+  </mat-sidenav>
+  
+
+  <mat-sidenav-content [ngClass]="showOptions ? '' : 'flex-column'">
+    <mat-toolbar color="accent" [ngClass]="showOptions ? '' : 'centered'">
+      <button mat-icon-button (click)="sidenav.toggle()" class="menu-burger" *ngIf="showOptions">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="title">CommanderX</span>
+      <div class="nav-links" *ngIf="showOptions">
+        <a mat-button routerLink="/status" routerLinkActive="active" class="page-button"
+          [class.active]="isActive('/status')">Statut</a>
+        <a mat-button routerLink="/config" routerLinkActive="active" class="page-button"
+          [class.active]="isActive('/config')">Configuration</a>
+        <a mat-button routerLink="/map" routerLinkActive="active" class="page-button"
+          [class.active]="isActive('/map')">Carte</a>
+        <a mat-button routerLink="/history" routerLinkActive="active" class="page-button"
+          [class.active]="isActive('/history')">Historique</a>
+      </div>
+      <div *ngIf="showOptions">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon [ngClass]="batteryColorClass" class="action-icon">{{ batteryIcon }}</mat-icon>
+        </button>
+        <button mat-icon-button (click)="showConnectionStatus()">
+          <mat-icon class="action-icon" [ngClass]="connected ? 'success' : 'error'">{{ connectionStatusIcon
+            }}</mat-icon>
+        </button>
+        <button mat-icon-button (click)="logout()">
+          <mat-icon class="action-icon">exit_to_app</mat-icon>
+        </button>
+      </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<mat-menu #menu="matMenu">
+  <ng-container *ngIf="robotVoltagesArray.length > 0 else noData">
+    <button mat-menu-item *ngFor="let robotVoltage of robotVoltagesArray">
+      <b>{{ robotVoltage.robot_id }}</b>: {{ convertVoltageToPercentage(robotVoltage.voltage) | number:'1.0-0' }}%
+    </button>
+  </ng-container>
+</mat-menu>
+
+<ng-template #noData>
+  <span mat-menu-item class="no-data">Aucun robot connecté</span>
+</ng-template>

@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="title-container">
+    <div>
+      <h3 class="title">Statut</h3>
+    </div>
+    <div>
+      <mat-button-toggle-group name="lockState" aria-label="Lock state" [(value)]="lockState">
+        <mat-button-toggle value="unlock" (click)="updateLockState(false)">
+          <i class="material-icons">lock_open</i>
+        </mat-button-toggle>
+        <mat-button-toggle value="lock" (click)="updateLockState(true)">
+          <i class="material-icons">lock</i>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  </div>
+  <div class="gridster-container">
+    <gridster [options]="options" class="gridster">
+      <gridster-item [item]="dashboard[0]">
+        <app-system-runtime></app-system-runtime>
+      </gridster-item>
+      <gridster-item [item]="dashboard[1]">
+        <app-system-info></app-system-info>
+      </gridster-item>
+      <gridster-item [item]="dashboard[2]">
+        <app-xterm></app-xterm>
+      </gridster-item>
+      <gridster-item [item]="dashboard[3]">
+        <app-locate></app-locate>
+      </gridster-item>
+      <gridster-item [item]="dashboard[4]">
+        <app-mission-history [showOptions]="false"></app-mission-history>
+      </gridster-item>
+      <gridster-item [item]="dashboard[5]">
+        <app-mission-control></app-mission-control>
+      </gridster-item>
+      <gridster-item [item]="dashboard[6]">
+        <app-map [isWidget]="true"></app-map>
+      </gridster-item>
+      <gridster-item [item]="dashboard[7]">
+        <app-init-position></app-init-position>
+      </gridster-item>
+    </gridster>
+  </div>
+</div>

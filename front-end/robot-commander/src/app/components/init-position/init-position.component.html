@@ -1,0 +1,67 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Position initiale</mat-card-title>
+    <button mat-button class="confirm-button" color="primary" [disabled]="confirmDisabled" (click)="confirmInitPositions()">
+      Confirmer
+    </button>
+  </mat-card-header>
+  <mat-card-content>
+    <ng-container *ngIf="getRobots().length; else noRobots">
+      <div class="row">
+        <label class="label label-width">Référence :</label>
+        <div class="radio-container">
+          <mat-radio-group [(ngModel)]="originRobotId" (ngModelChange)="onOriginRobotChange()" aria-label="Sélectionner robot origine">
+            <mat-radio-button color="primary" *ngFor="let robot of getRobots(); trackBy: trackByRobotId" class="radio-button" [value]="robot.robot_id">
+              {{robot.robot_id}}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+      <div class="row">
+        <label class="label label-width">
+          <span>Coordonnées</span><br>
+          <span>relatives :</span>
+        </label>
+        <form class="coordinates-form">
+          <div class="custom-input-container">
+            <label for="initPositionX">X :</label>
+            <input class="custom-input" placeholder="x" [(ngModel)]="nonSelectedRobotPosition.x" (ngModelChange)="updateNonSelectedRobotPosition('x', $event)" name="initPositionX" type="number" />
+          </div>
+          <div class="custom-input-container">
+            <label for="initPositionX">Y :</label>
+            <input class="custom-input" placeholder="y" [(ngModel)]="nonSelectedRobotPosition.y" (ngModelChange)="updateNonSelectedRobotPosition('y', $event)" name="initPositionY" type="number" />
+          </div>
+        </form>
+      </div>
+      <div class="row">
+        <label class="label label-width">
+          <span>Orientation</span><br>
+          <span>quaternion :</span>
+        </label>
+        <form class="coordinates-form">
+          <div class="custom-input-container">
+            <label for="initOrientationX">X :</label>
+            <input class="custom-input" placeholder="x" [(ngModel)]="nonSelectedRobotOrientation.x" (ngModelChange)="updateNonSelectedRobotOrientation('x', $event)" name="initOrientationX" type="number" />
+          </div>
+          <div class="custom-input-container">
+            <label for="initOrientationY">Y :</label>
+            <input class="custom-input" placeholder="y" [(ngModel)]="nonSelectedRobotOrientation.y" (ngModelChange)="updateNonSelectedRobotOrientation('y', $event)" name="initOrientationY" type="number" />
+          </div>
+          <div class="custom-input-container">
+            <label for="initOrientationZ">Z :</label>
+            <input class="custom-input" placeholder="z" [(ngModel)]="nonSelectedRobotOrientation.z" (ngModelChange)="updateNonSelectedRobotOrientation('z', $event)" name="initOrientationZ" type="number" />
+          </div>
+          <div class="custom-input-container">
+            <label for="initOrientationW">W :</label>
+            <input class="custom-input" placeholder="w" [(ngModel)]="nonSelectedRobotOrientation.w" (ngModelChange)="updateNonSelectedRobotOrientation('w', $event)" name="initOrientationW" type="number" />
+          </div>
+        </form>
+      </div>
+    </ng-container>
+    <ng-template #noRobots>
+      <div class="no-robots">
+        <span>Aucun robot n'est connecté</span>
+      </div>
+    </ng-template>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,1 @@
+export const MAX_HTTP_BUFFER_SIZE = 1e7;

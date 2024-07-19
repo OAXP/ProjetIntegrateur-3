@@ -1,0 +1,56 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+mat-card {
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    background-color: #2b2b2b;
+
+    mat-card-header {
+        justify-content: space-between;
+    }
+
+    mat-card-title {
+        font-size: large;
+        color: white;
+    }
+
+    mat-card-content {
+        margin-top: 16px;
+    }
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.terminal-container {
+    flex-grow: 1;
+}
+
+.title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.color-white {
+    color: white;
+}
+
+.color-white:hover {
+    color: rgba(255, 255, 255, 0.685);
+}
+
+.mat-icon:hover {
+    cursor: pointer;
+}
+
+.color-red {
+    color: #dc3545;
+}

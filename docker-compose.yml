@@ -1,0 +1,44 @@
+version: "3"
+
+services:
+  inf3995-106-backend:
+    profiles:
+      - station
+      - backend
+    build:
+      context: ./
+      dockerfile: ./backend_server/Dockerfile
+    image: inf3995-106-backend
+    ports:
+      - 3000:3000
+  inf3995-106-frontend:
+    profiles:
+      - station
+      - frontend
+    build: ./front-end/robot-commander
+    image: inf3995-106-frontend
+    ports:
+      - 4200:4200
+  inf3995-106-simulation:
+    profiles:
+      - simulation
+    build: ./simulation_ws
+    image: inf3995-106-simulation
+    ipc: host
+    pid: host
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+  inf3995-106-robot:
+    profiles:
+      - robot
+    build: ./robot_physique_ws
+    image: inf3995-106-robot
+    network_mode: host
+    devices:
+      - /dev/ttyTHS1
+      - /dev/ydlidar
+      - /sys/bus/usb/001/010
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix

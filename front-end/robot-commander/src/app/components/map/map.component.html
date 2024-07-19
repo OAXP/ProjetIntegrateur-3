@@ -1,0 +1,25 @@
+<ng-container *ngIf="isWidget">
+    <mat-card #matCard>
+        <mat-card-header>
+            <mat-card-title>Carte</mat-card-title>
+            <mat-icon (click)="openMap()" class="redirect-button">open_in_new</mat-icon>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="map-container" #mapContainer>
+                <canvas #canvasElement></canvas>
+                <div class="loading-overlay" *ngIf="isLoading">
+                    <mat-spinner [diameter]="50"></mat-spinner>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</ng-container>
+
+<ng-container *ngIf="!isWidget">
+    <div class="map-container height-100" #mapContainer>
+        <canvas #canvasElement></canvas>
+        <div class="loading-overlay" *ngIf="isLoading">
+            <mat-spinner [diameter]="70"></mat-spinner>
+        </div>
+    </div>
+</ng-container>

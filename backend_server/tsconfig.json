@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "rootDir": "./",
+    "target": "ES6",
+    "module": "commonjs",
+    "outDir": "out",
+    "types": ["node", "reflect-metadata", "mocha"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strictPropertyInitialization": false,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "paths": {
+      "@src/*": ["./src/*"],
+    }
+  },
+  "include": ["src/**/*.ts"],  // Specify the files to include in compilation explicitly
+  "exclude": ["node_modules", "assets"]  // Exclude unnecessary folders
+}

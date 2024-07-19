@@ -1,0 +1,51 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+mat-card {
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    overflow: auto;
+
+    .mat-mdc-card-header {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    mat-card-title {
+        font-size: large;
+    }
+
+    mat-card-content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+}
+
+.start-button {
+    color: white;
+    background-color: #2ec4b6;
+}
+
+.return-button {
+    color: white;
+    background-color: #ff5722;
+}
+
+.status-waiting {
+    color: #ff5722;
+}
+
+.status-running {
+    color: #2ec4b6;
+}

@@ -1,0 +1,12 @@
+<div id="container" #container>
+<mat-card>
+  <mat-card-header [ngClass]="this.data ? 'modal' : ''">
+    <mat-card-title>Logs</mat-card-title>
+    <mat-icon *ngIf="!this.data" (click)="clearTerminal()" class="color-white">delete</mat-icon>
+    <mat-icon *ngIf="this.data" (click)="closeDialog()" class="color-red">close</mat-icon>
+  </mat-card-header>
+  <mat-card-content class="card-content">
+    <div #terminal class="terminal-container gridster-item-content"></div>
+  </mat-card-content>
+</mat-card>
+</div>

@@ -1,0 +1,21 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Temps de fonctionnement</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <ng-container *ngIf="getRobotIds().length; else noRobots">
+            <div class="runtime-container">
+                <div class="runtime" *ngFor="let robotId of getRobotIds()">
+                    <div class="runtime-value">{{elapsedTimes[robotId]}}</div>
+                    <div class="runtime-title">{{robotId}}</div>
+                </div>
+            </div>
+        </ng-container>
+    </mat-card-content>
+</mat-card>
+
+<ng-template #noRobots>
+    <div class="no-robots">
+        <span>Aucun robot n'est connecté</span>
+    </div>
+</ng-template>

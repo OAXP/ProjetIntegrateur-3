@@ -1,0 +1,28 @@
+<div id="container" #container>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Robots</mat-card-title>
+      <button mat-button class="locate-all-button" (click)="identify('all')">
+        Tout localiser
+      </button>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="list-container" *ngIf="getRobotInfos().length; else noRobots">
+        <div *ngFor="let robotId of getRobotInfos()">
+          <span class="robot-id">ID : {{ robotId[0] }}</span>
+          <p>{{robotId[1].status}}</p>
+          <button mat-mini-fab matTooltip="Localiser" aria-label="Localiser" class="shadow-adjust locate-button"
+            (click)="identify(robotId[0])">
+            <mat-icon>my_location</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<ng-template #noRobots>
+  <div class="no-robots">
+    <span>Aucun robot n'est connecté</span>
+  </div>
+</ng-template>
