@@ -1,6 +1,6 @@
-# INF3995 Équipe 106 x Agence Spatiale Polymtl
+# Équipe 106 x Agence Spatiale Polymtl
 
-Ce projet est l'implémentation de la demande de l'Agence Spatiale de Polytechnique Montréal par l'équipe 106 du cours de Projet intégrateur 3 INF3995.
+Ce projet est l'implémentation de la demande de l'Agence Spatiale de Polytechnique Montréal par l'équipe 106 du cours de Projet intégrateur 3.
 
 Il consiste en un remplacement d'un gros robot explorateur cher qui peut seulement explorer un terrain tout seul et celà de manière limitée et lente. À la place, plusieurs petits robots seront mis en place et pourront simulatanément explorer un terrain et ce à petit coût.
 
@@ -43,7 +43,7 @@ nvm use 18.19.0
 
 ### dépôt git
 ```sh
-git clone https://gitlab.com/polytechnique-montr-al/inf3995/20241/equipe-106/INF3995-106.git
+git clone https://github.com/OAXP/ProjetIntegrateur-3.git
 ```
 
 ### dépendances ROS
